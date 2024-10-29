@@ -45,7 +45,7 @@ flask_mongo_crud/
 ### 1. Clone the Repository
 Open your terminal and run the following command to clone the repository:
 ```bash
-git clone <repository-url>
+git clone <git@github.com:Kalparatna/Flask_MongoDB-Crud-.git>
 cd flask_mongo_crud
 ```
 
