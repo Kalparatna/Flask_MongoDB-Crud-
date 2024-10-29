@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="subtitle">Users</h2>
+<a class="button is-primary" href="/users/new">Add User</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{ user._id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+                <a class="button is-small" href="/users/{{ user._id }}">Edit</a>
+                <form action="/users/{{ user._id }}" method="POST" style="display:inline;">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button class="button is-small is-danger" type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
